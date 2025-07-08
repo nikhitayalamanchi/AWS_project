@@ -185,7 +185,25 @@
     <footer>
         <p>&copy; 2023 Homemade Pickles & Snacks. All rights reserved.</p>
     </footer>
+      <script>
+    const orderData = {
+      order_id: "ORD" + Date.now(),
+      username: "{{ session.get('username', 'guest') }}",
+      items: JSON.parse(localStorage.getItem('cart')) || [],
+      total: (JSON.parse(localStorage.getItem('cart')) || []).reduce((acc, item) => acc + (item.price * (item.quantity || 1)), 0)
+    };
 
+    fetch('/order_confirmation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(orderData)
+    })
+    .then(res => res.json())
+    .then(data => console.log('Order placed:', data))
+    .catch(err => console.error('Error:', err));
+    </script>
    
 </body>
 </html>
