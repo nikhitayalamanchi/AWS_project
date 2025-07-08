@@ -8,8 +8,8 @@ app.secret_key = os.urandom(24)
 
 # AWS Configuration
 region = 'ap-south-1'
-dynamodb = boto3.resource('dynamodb', region_name=region)
-sns = boto3.client('sns', region_name=region)
+dynamodb = boto3.resource('dynamodb', region_name=us-east-1)
+sns = boto3.client('sns', region_name=us-east-1)
 
 # AWS Resources
 users_table = dynamodb.Table('Users')
