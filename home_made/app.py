@@ -5,11 +5,11 @@ import boto3
 from botocore.exceptions import ClientError
 
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
-users_table = dynamodb.Table('Users')
-orders_table = dynamodb.Table('Orders')  # If storing orders
+Users = dynamodb.Table('Users')
+Orders = dynamodb.Table('Orders')  # If storing orders
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # Replace with a secure random key
+app.secret_key = 'hxbo ylcy xgze vkgl'  # Replace with a secure random key
 
 # Helper functions for user storage in JSON
 USERS_FILE = os.path.join(os.path.dirname(__file__), 'data', 'users.json')
