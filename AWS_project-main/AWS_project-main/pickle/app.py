@@ -111,18 +111,18 @@ def snacks():
 @app.route('/order_confirmation', methods=['GET', 'POST'])
 def order_confirmation():
     if request.method == 'POST':
-        order_data = request.get_json()
-        print("Received order:", order_data)
+       # order_data = request.get_json()
+        print("Received order")
 
-        try:
-            orders_table.put_item(Item=order_data)
-        except ClientError as e:
-            print("DynamoDB Error:", e)
+      #  try:
+      #     orders_table.put_item(Item=order_data)
+      #  except ClientError as e:
+      #      print("DynamoDB Error:", e) 
 
         try:
             sns.publish(
                 TopicArn=SNS_TOPIC_ARN,
-                Message=f"New order placed: {order_data}",
+                Message=f"New order placed",
                 Subject='New Order Notification'
             )
         except ClientError as e:
