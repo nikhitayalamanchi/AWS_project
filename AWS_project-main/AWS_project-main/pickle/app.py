@@ -122,7 +122,7 @@ def order_confirmation():
         try:
             sns.publish(
                 TopicArn=SNS_TOPIC_ARN,
-                Message=f"New order placed",
+                Message="New order placed",
                 Subject='New Order Notification'
             )
         except ClientError as e:
