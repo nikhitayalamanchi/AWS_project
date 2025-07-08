@@ -1,6 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import os
 import json
+import boto3
+from botocore.exceptions import ClientError
+
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+users_table = dynamodb.Table('Users')
+orders_table = dynamodb.Table('Orders')  # If storing orders
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'  # Replace with a secure random key
