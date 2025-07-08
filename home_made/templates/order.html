@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Order Pickle{% endblock %}
+
+{% block content %}
+<div class="order-form-container">
+    <h2 class="order-form-title">Order: {{ pickle_name | capitalize }} Pickle</h2>
+    <form action="{{ url_for('submit_order') }}" method="POST" class="order-form-styled">
+        <input type="hidden" name="pickle_name" value="{{ pickle_name }}">
+        
+        <label for="name">Customer Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" name="phone" required>
+
+        <label for="quantity">Quantity (grams):</label>
+        <input type="number" name="quantity" min="100" step="100" required>
+
+        <button type="submit" class="buy-btn">Checkout</button>
+    </form>
+</div>
+{% endblock %}

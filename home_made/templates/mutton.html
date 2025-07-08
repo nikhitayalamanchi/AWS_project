@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Mutton Pickle{% endblock %}
+
+{% block content %}
+<h2>🥩 Mutton Pickle</h2>
+<p>A rich and flavorful pickle prepared using tender mutton pieces, garlic, ginger, and homemade masala.</p>
+<p><strong>Price:</strong> ₹320 per 250g</p>
+
+<h3>Buy Now</h3>
+<form action="#" method="POST">
+    <label>Name: <input type="text" name="name" required></label><br><br>
+    <label>Phone: <input type="text" name="phone" required></label><br><br>
+    <label>Quantity (grams): <input type="number" name="qty" required></label><br><br>
+    <button type="submit" class="btn">Add to Cart</button>
+</form>
+{% endblock %}

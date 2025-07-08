@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Traditional Pickles</title>
+  <style>
+    body {
+      background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsavithrammas.com%2Fsite%2Fimage%2Fcache%2Fcatalog%2FA-Guide-to-Savithrammas-Exotic-Pickles-and-Spices-1080x540.jpg&f=1&nofb=1&ipt=d8f9d3ec8accb1522339e2e8fabcd3b238bd2a50cfced210503373f4c6be8fa0');
+      background-size: cover;
+      text-align: center;
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: aliceblue;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+    }
+    .btn {
+      background-color: rgb(79, 225, 118);
+      color: #0d0505;
+      padding: 15px 30px;
+      border: none;
+      margin: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background-color: rgb(226, 43, 76);
+      cursor: pointer;
+      color: white;
+    }
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Traditional Pickles</h1>
+
+  <div class="btn-container">
+    <a href="{{ url_for('login') }}" class="btn">Login</a>
+    <a href="{{ url_for('signup') }}" class="btn">Sign Up</a>
+    <a href="{{ url_for('about') }}" class="btn">About Us</a>
+  </div>
+
+</body>
+</html>

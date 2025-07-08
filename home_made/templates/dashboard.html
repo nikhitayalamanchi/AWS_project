@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | Homemade Pickle{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <h2>Welcome, {{ user }}!</h2>
+    <h2>Make your move</h2>
+
+    <div class="dashboard-buttons">
+        <a href="{{ url_for('veg_pickles') }}" class="dash-btn veg">Veg Pickles</a>
+        <a href="{{ url_for('non_veg_pickles') }}" class="dash-btn nonveg">Non-Veg Pickles</a>
+        <a href="{{ url_for('snacks') }}" class="dash-btn snacks">Snacks</a>
+        <a href="{{ url_for('products') }}" class="dash-btn products">Products</a>
+    </div>
+</div>
+{% endblock %}

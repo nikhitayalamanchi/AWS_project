@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Snacks{% endblock %}
+{% block content %}
+<div class="product-list-container">
+    <h2 class="product-list-title">Snacks</h2>
+    <div class="product-list-grid">
+        {% for product in products %}
+        <div class="product-card">
+            <div class="product-card-body">
+                <h5 class="product-card-title">{{ product.name }}</h5>
+                <p class="product-card-desc">{{ product.desc }}</p>
+                <p class="product-card-info"><strong>Price:</strong> ₹{{ product.price }}</p>
+                <p class="product-card-info"><strong>Weight:</strong> {{ product.weight }}g</p>
+                <a href="/order/{{ product.name|replace(' ', '-')|lower }}" class="product-card-btn">Order Now</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

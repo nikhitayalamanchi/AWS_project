@@ -1,0 +1,686 @@
+/* ---------- GENERAL ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9ff;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+    margin: 0 15px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+}
+
+/* ---------- LOGIN FORM ---------- */
+.login-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #6e45e2;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 16px;
+    background-color: #f8f9ff;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #6e45e2;
+    box-shadow: 0 0 0 3px rgba(110,69,226,0.2);
+    outline: none;
+}
+
+.login-button {
+    width: 100%;
+    background: linear-gradient(to right, #6e45e2, #88d3ce);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    background: linear-gradient(to right, #5d38c4, #76c2bd);
+    transform: translateY(-2px);
+}
+
+.error-message {
+    color: #e53e3e;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(229,62,62,0.1);
+    border-radius: 8px;
+}
+
+/* ---------- DASHBOARD ---------- */
+.dashboard {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.dashboard h2 {
+    margin-bottom: 30px;
+    color: #6e45e2;
+    font-size: 2rem;
+}
+
+.dashboard-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    align-items: center;
+    margin-top: 50px;
+    
+
+}
+
+.dash-btn {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* ---------- CATEGORY COLORS ---------- */
+.dash-btn.veg {
+    background: linear-gradient(135deg, #38a169 0%, #68d391 100%);
+}
+.dash-btn.veg:hover {
+    background: linear-gradient(135deg, #068348dc,#068348dc) ;
+}
+
+.dash-btn.nonveg {
+    background: linear-gradient(135deg, #10a585d3 0%, #10a585d3 100%);
+}
+.dash-btn.nonveg:hover {
+    background: linear-gradient(135deg, #2ad392, #2ad392);
+}
+
+.dash-btn.snacks {
+    background: linear-gradient(135deg, #565dc2d2 0%, #565dc2d2 100%);
+}
+.dash-btn.snacks:hover {
+    background: linear-gradient(135deg,#0b08dfe0, #0b08dfe0);
+}
+
+.dash-btn.products {
+    background: linear-gradient(135deg, #0a93e2d2 0%, #0a93e2d2 100%);
+}
+.dash-btn.products:hover {
+    background: linear-gradient(135deg, #3f9aaad0, #3f9aaad0);
+}
+
+/* ---------- VEG PICKLES SECTION ---------- */
+.veg-pickles-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.veg-pickles-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #38a169;
+    font-size: 2rem;
+}
+
+.pickle-recipe {
+    background-color: #f0fff4;
+    border-left: 6px solid #38a169;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.pickle-recipe:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(56,161,105,0.1);
+}
+
+.pickle-recipe h3 {
+    color: #2f855a;
+    margin-bottom: 15px;
+}
+
+.pickle-recipe p {
+    margin: 10px 0;
+    line-height: 1.7;
+}
+
+.veg-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.veg-btn {
+    background: linear-gradient(to right, #38a169, #68d391);
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.veg-btn:hover {
+    background: linear-gradient(to right, #2f855a, #5ec485);
+    transform: translateY(-3px);
+}
+
+.pickle-detail {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.buy-btn {
+    background: linear-gradient(to right, #e53e3e, #f56565);
+    color: white;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: linear-gradient(to right, #c53030, #e24b4b);
+    transform: translateY(-3px);
+}
+
+/* ---------- ORDER FORM ---------- */
+.order-form {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.order-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #6e45e2;
+    font-size: 2rem;
+}
+
+.order-form label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.order-form input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 16px;
+    background-color: #f8f9ff;
+    transition: all 0.3s ease;
+}
+
+.order-form input:focus {
+    border-color: #6e45e2;
+    box-shadow: 0 0 0 3px rgba(110,69,226,0.2);
+    outline: none;
+}
+
+.order-form button {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.order-summary {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 35px;
+    background: white;
+    border: 2px solid #ed8936;
+    border-radius: 15px;
+    font-size: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    margin: 10px 0;
+    background: linear-gradient(to right, #6e45e2, #88d3ce);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #5d38c4, #76c2bd);
+    transform: translateY(-3px);
+}
+
+/* ---------- ABOUT PAGE ---------- */
+.about-container {
+    max-width: 900px;
+    margin: 60px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 50px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    border: 5px solid white;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text ul {
+    margin: 25px 0;
+    padding-left: 25px;
+}
+
+.about-text li {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+}
+
+.about-text strong {
+    color: #6e45e2;
+}
+
+/* ---------- SIGNUP PAGE ---------- */
+.signup-container {
+    max-width: 500px;
+    margin: 80px auto 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 50px;
+    text-align: center;
+}
+
+.signup-container h2 {
+    margin-bottom: 30px;
+    color: #6e45e2;
+    font-size: 2rem;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.signup-form input {
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1em;
+    background: #f8f9ff;
+    transition: all 0.3s ease;
+}
+
+.signup-form input:focus {
+    border: 1.5px solid #6e45e2;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(110,69,226,0.2);
+}
+
+.signup-form button {
+    background: linear-gradient(to right, #6e45e2, #88d3ce);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.signup-form button:hover {
+    background: linear-gradient(to right, #5d38c4, #76c2bd);
+    transform: translateY(-3px);
+}
+
+.form-error {
+    color: #e53e3e;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding: 12px;
+    background-color: rgba(229,62,62,0.1);
+    border-radius: 8px;
+    border-left: 4px solid #e53e3e;
+}
+
+.form-note {
+    margin-top: 30px;
+    font-size: 1em;
+    color: #718096;
+}
+
+.form-note a {
+    color: #6e45e2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form-note a:hover {
+    color: #88d3ce;
+    text-decoration: underline;
+}
+
+/* ---------- PRODUCT LIST ---------- */
+.product-list-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 50px;
+}
+
+.product-list-title {
+    text-align: center;
+    color: #6e45e2;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+}
+
+.product-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 0 0 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(110,69,226,0.2);
+}
+
+.product-card-body {
+    padding: 25px 25px 0 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.product-card-title {
+    font-size: 1.4em;
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.product-card-desc {
+    font-size: 1.1em;
+    color: #4a5568;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.product-card-info {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #718096;
+}
+
+.product-card-btn {
+    margin-top: 20px;
+    background: linear-gradient(to right, #6e45e2, #88d3ce);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.product-card-btn:hover {
+    background: linear-gradient(to right, #5d38c4, #76c2bd);
+    transform: translateY(-3px);
+}
+
+/* ---------- ORDER FORM STYLED ---------- */
+.order-form-container {
+    max-width: 500px;
+    margin: 80px auto 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 50px;
+    text-align: center;
+}
+
+.order-form-title {
+    margin-bottom: 30px;
+    color: #6e45e2;
+    font-size: 2rem;
+}
+
+.order-form-styled {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.order-form-styled label {
+    text-align: left;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.order-form-styled input {
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1em;
+    background: #f8f9ff;
+    transition: all 0.3s ease;
+}
+
+.order-form-styled input:focus {
+    border: 1.5px solid #6e45e2;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(110,69,226,0.2);
+}
+
+.buy-btn {
+    background: linear-gradient(to right, #6e45e2, #88d3ce);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+    background: linear-gradient(to right, #5d38c4, #76c2bd);
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .login-container, 
+    .dashboard, 
+    .veg-pickles-container, 
+    .pickle-detail, 
+    .order-form, 
+    .order-summary, 
+    .about-container, 
+    .signup-container, 
+    .product-list-container, 
+    .order-form-container {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 30px;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-img {
+        width: 100%;
+        height: 250px;
+    }
+    
+    .product-list-grid {
+        grid-template-columns: 1fr;
+    }
+}
