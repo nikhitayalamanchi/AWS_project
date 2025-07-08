@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homemade Snacks Collection</title>
+    <script src="../static/js/cart.js"></script>
+    <style>
+        :root {
+            --primary: #2196F3;
+            --secondary: #FFC107;
+            --light: #f9f9f9;
+            --dark: #212121;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .tab-btn {
+            padding: 0.5rem 1.5rem;
+            background: #ddd;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .snack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .snack-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .snack-card:hover {
+            transform: translateY(-5px);
+        }
+        .snack-img {
+            height: 180px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        .snack-info {
+            padding: 1.5rem;
+        }
+        .snack-info h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .price {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0b7dda;
+        }
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Premium Homemade Snacks Collection</h1>
+        <p>Traditional and innovative snack options for every taste</p>
+    </header>
+
+  
+
+    <div class="container">
+        <!-- Veg Snacks Tab -->
+        <div id="veg" class="tab-content active">
+            <h2>Snacks (12 Options)</h2>
+            <h5>*Rates are mentioned per kg</h5>
+            
+            <div class="snack-grid">
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/traditional_murukku.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Traditional Murukku</h3>
+                        <p>Crispy rice flour spiral snacks</p>
+                        <div class="price">₹129</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/thattai.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Thattai</h3>
+                        <p>Crunchy lentil flour discs</p>
+                        <div class="price">₹119</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/mixture.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Mixture</h3>
+                        <p>Assorted fried snacks mix</p>
+                        <div class="price">₹149</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/sev.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Sev</h3>
+                        <p>Thin gram flour noodles</p>
+                        <div class="price">₹99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/banana_chips.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Banana Chips</h3>
+                        <p>Crispy raw banana slices</p>
+                        <div class="price">₹109</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/kara_boondhi.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Kara Boondhi</h3>
+                        <p>Tiny fried gram flour pearls</p>
+                        <div class="price">₹89</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/spiced_peanuts.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Spiced Peanuts</h3>
+                        <p>Roasted peanuts with spices</p>
+                        <div class="price">₹79</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/peanut_chakki.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Chakli</h3>
+                        <p>Spiral shaped crispy snack</p>
+                        <div class="price">₹139</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/omapodi.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Omapodi</h3>
+                        <p>Flavorful sev with carom seeds</p>
+                        <div class="price">₹99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/kodubale.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Kodubale</h3>
+                        <p>Ring-shaped rice flour snack</p>
+                        <div class="price">₹119</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/ribbon_pakoda.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Ribbon Pakoda</h3>
+                        <p>Ribbon-shaped crispy snack</p>
+                        <div class="price">₹129</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="snack-card">
+                    <div class="snack-img" style="background-image: url('../static/images/snacks/rava_laddoo.jpg');"></div>
+                    <div class="snack-info">
+                        <h3>Rava Laddoo</h3>
+                        <p>Sweet laddoo made with rava and ghee</p>
+                        <div class="price">₹119</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+       
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Homemade Pickles & Snacks. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Show the current tab and mark button as active
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

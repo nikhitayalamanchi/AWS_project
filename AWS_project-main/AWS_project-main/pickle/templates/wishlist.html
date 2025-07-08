@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wishlist</title>
+    <style>
+        :root {
+            --primary: #9C27B0;
+            --secondary: #FF9800;
+            --light: #f9f9f9;
+            --dark: #212121;
+            --danger: #f44336;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .wishlist-items {
+            margin-bottom: 2rem;
+        }
+        .wishlist-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            background: white;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+        }
+        .item-info {
+            flex: 2;
+        }
+        .item-price {
+            flex: 1;
+            text-align: right;
+            font-weight: bold;
+        }
+        .item-actions {
+            flex: 0 0 150px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .action-btn {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .add-to-cart {
+            background-color: var(--primary);
+            color: white;
+        }
+        .add-to-cart:hover {
+            background-color: #7B1FA2;
+        }
+        .buy-now {
+            background-color: var(--secondary);
+            color: white;
+        }
+        .buy-now:hover {
+            background-color: #F57C00;
+        }
+        .remove-item {
+            background-color: var(--danger);
+            color: white;
+        }
+        .remove-item:hover {
+            background-color: #D32F2F;
+        }
+        .empty-wishlist {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #7B1FA2;
+        }
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Wishlist</h1>
+        <p>Items you've saved for later</p>
+    </header>
+
+    <div class="container">
+        <div id="wishlist-content">
+            <!-- Wishlist items will be dynamically inserted here -->
+            <div class="empty-wishlist">
+                <h2>Your wishlist is empty</h2>
+                <p>Save your favorite items to view them here</p>
+                <a href="home.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Homemade Pickles & Snacks. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load wishlist items from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistContent = document.getElementById('wishlist-content');
+
+            if (wishlist.length > 0) {
+                // Remove empty wishlist message
+                wishlistContent.innerHTML = '';
+                
+                // Create wishlist items container
+                const itemsContainer = document.createElement('div');
+                itemsContainer.className = 'wishlist-items';
+                wishlistContent.appendChild(itemsContainer);
+
+                // Add each item to the wishlist
+                wishlist.forEach((item, index) => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'wishlist-item';
+                    itemElement.innerHTML = `
+                        <div class="item-info">
+                            <h3>${item.name}</h3>
+                            <p>${item.description}</p>
+                        </div>
+                        <div class="item-price">₹${item.price}</div>
+                        <div class="item-actions">
+                            <button class="action-btn add-to-cart" data-index="${index}">Add to Cart</button>
+                            <button class="action-btn buy-now" data-index="${index}">Buy Now</button>
+                            <button class="action-btn remove-item" data-index="${index}">×</button>
+                        </div>
+                    `;
+                    itemsContainer.appendChild(itemElement);
+                });
+
+                // Add event listeners to action buttons
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        moveToCart(index);
+                    });
+                });
+
+                document.querySelectorAll('.buy-now').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        moveToCart(index, true);
+                    });
+                });
+
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        removeFromWishlist(index);
+                    });
+                });
+            }
+        });
+
+        function moveToCart(index, checkout = false) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Add item to cart
+            cart.push(wishlist[index]);
+            
+            // Remove from wishlist
+            wishlist.splice(index, 1);
+            
+            // Update storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            
+            if (checkout) {
+                window.location.href = 'checkout.html';
+            } else {
+                alert('Item has been moved to your cart!');
+                location.reload();
+            }
+        }
+
+        function removeFromWishlist(index) {
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            wishlist.splice(index, 1);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            location.reload();
+        }
+    </script>
+</body>
+</html>
