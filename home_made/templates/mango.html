@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Mango Pickle{% endblock %}
+
+{% block content %}
+<div class="pickle-detail">
+    <h2>🥭 Mango Pickle (Avakaya)</h2>
+    <p><strong>Ingredients:</strong> Raw mango, mustard powder, chili powder, garlic, salt, sesame oil.</p>
+    <p><strong>Description:</strong> A spicy and tangy South Indian classic made from fresh mangoes and aromatic spices.</p>
+    <p class="price"><strong>Price:</strong> ₹180 / 500g</p>
+    <a href="{{ url_for('order', pickle_name='mango') }}" class="buy-btn">Buy Now</a>
+
+    
+</div>
+{% endblock %}

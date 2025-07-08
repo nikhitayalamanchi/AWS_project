@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Carrot Pickle{% endblock %}
+
+{% block content %}
+<div class="pickle-detail">
+    <h2>🥕 Carrot & Green Chili Pickle</h2>
+    <p><strong>Ingredients:</strong> Fresh carrots, green chilies, lemon juice, mustard seeds, fenugreek powder, salt, oil.</p>
+    <p><strong>Description:</strong> A crunchy and mildly spicy pickle made with carrots and chilies.</p>
+    <p class="price"><strong>Price:</strong> ₹130 / 500g</p>
+<a href="{{ url_for('order', pickle_name='carrot') }}" class="buy-btn">Buy Now</a>
+
+</div>
+{% endblock %}
