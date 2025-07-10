@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Veg Pickles Collection</title>
+    <script src="../static/js/cart.js"></script>
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --secondary: #FF9800;
+            --light: #f9f9f9;
+            --dark: #212121;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .pickle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .pickle-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .pickle-card:hover {
+            transform: translateY(-5px);
+        }
+        .pickle-img {
+            height: 180px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        .pickle-info {
+            padding: 1.5rem;
+        }
+        .pickle-info h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .price {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #3e8e41;
+        }
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Premium Veg Pickles Collection</h1>
+        <p>Authentic homemade pickles with traditional recipes</p>
+    </header>
+
+    <div class="container">
+        <h2>Our Vegetarian Pickle Varieties (15 Options)</h2>
+        <h5>*Rates are mentioned per kg</h5>
+
+        
+        <div class="pickle-grid">
+            <!-- 15 veg pickle varieties -->
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/mangopickle.png');"></div>
+                <div class="pickle-info">
+                    <h3>Traditional Mango Pickle</h3>
+                    <p>Spicy raw mango pickle with mustard oil and spices</p>
+                    <div class="price">₹199</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/lemon-pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Lemon Pickle</h3>
+                    <p>Tangy lemon preserved with spices and oil</p>
+                    <div class="price">₹179</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/mixed_vegetable_pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Mixed Vegetable Pickle</h3>
+                    <p>Assorted vegetables in spicy mustard oil</p>
+                    <div class="price">₹229</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/gralic_pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Garlic Pickle</h3>
+                    <p>Pungent garlic cloves in spicy marinade</p>
+                    <div class="price">₹249</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/green_chilli_pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Green Chilli Pickle</h3>
+                    <p>Fiery green chillies preserved with spices</p>
+                    <div class="price">₹189</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/carrot_pickle.webp');"></div>
+                <div class="pickle-info">
+                    <h3>Carrot Pickle</h3>
+                    <p>Crunchy carrots in tangy spice mix</p>
+                    <div class="price">₹199</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/ginger_pickle.png');"></div>
+                <div class="pickle-info">
+                    <h3>Ginger Pickle</h3>
+                    <p>Zesty ginger slices in spicy oil</p>
+                    <div class="price">₹219</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/amla_pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Amla (Gooseberry) Pickle</h3>
+                    <p>Nutritious amla in traditional spices</p>
+                    <div class="price">₹239</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/tomato_pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Tomato Pickle</h3>
+                    <p>Tangy tomato and garlic combination</p>
+                    <div class="price">₹189</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/radish_pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Radish Pickle</h3>
+                    <p>Crunchy radish with mustard seeds</p>
+                    <div class="price">₹199</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/bitter_gourd_pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Bitter Gourd Pickle</h3>
+                    <p>Healthy bitter gourd with jaggery balance</p>
+                    <div class="price">₹259</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/pearl_onion_pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Pearl Onion Pickle</h3>
+                    <p>Small onions in spicy tamarind sauce</p>
+                    <div class="price">₹219</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/avakaya_pickle.png');"></div>
+                <div class="pickle-info">
+                    <h3>Avakkai (Andhra Mango Pickle)</h3>
+                    <p>Spicy Andhra-style raw mango pickle</p>
+                    <div class="price">₹279</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/red_chilli_pickle.jpg');"></div>
+                <div class="pickle-info">
+                    <h3>Red Chilli Pickle</h3>
+                    <p>Whole red chillies in oil and spices</p>
+                    <div class="price">₹229</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            
+            <div class="pickle-card">
+                <div class="pickle-img" style="background-image: url('../static/images/veg-pickles/pancharatna_pickle.png');"></div>
+                <div class="pickle-info">
+                    <h3>Panchratna Pickle</h3>
+                    <p>Five-vegetable combination pickle</p>
+                    <div class="price">₹299</div>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Homemade Pickles & Snacks. All rights reserved.</p>
+    </footer>
+</body>
+</html>
